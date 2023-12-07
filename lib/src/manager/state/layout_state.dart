@@ -353,15 +353,17 @@ mixin LayoutState implements IPlutoGridState {
 
   @override
   double get leftFrozenRightOffset =>
-      maxWidth! -
-      leftFrozenColumnsWidth -
-      PlutoGridSettings.totalShadowLineWidth;
+      maxWidth ??
+      double.infinity -
+          leftFrozenColumnsWidth -
+          PlutoGridSettings.totalShadowLineWidth;
 
   @override
   double get rightFrozenLeftOffset =>
-      maxWidth! -
-      rightFrozenColumnsWidth -
-      PlutoGridSettings.totalShadowLineWidth;
+      maxWidth ??
+      double.infinity -
+          rightFrozenColumnsWidth -
+          PlutoGridSettings.totalShadowLineWidth;
 
   @override
   double get rightBlankOffset =>
